@@ -127,7 +127,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="UniversityProject.cpp" />
+    <ClCompile Include="Person.cpp" />
+    <ClCompile Include="PersonCollection.cpp" />
+    <ClCompile Include="University.cpp" />
+    <ClCompile Include="UniversityProjec.cpp" />
+    <ClCompile Include="Utilites.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Person.h" />
+    <ClInclude Include="PersonCollection.h" />
+    <ClInclude Include="University.h" />
+    <ClInclude Include="Utilites.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
