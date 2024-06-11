@@ -1,0 +1,32 @@
+ Person personLoaded[4];
+ personLoaded[0].personType = ADMIN;
+ personLoaded[0].id = 1111;
+ personLoaded[0].CNIC = 242424245;
+ personLoaded[0].name = "Ali";
+ personLoaded[0].password = "iamAli";
+
+ personLoaded[1].personType = TEACHER;
+ personLoaded[1].id = 2222;
+ personLoaded[1].CNIC = 353535355;
+ personLoaded[1].name = "Fatima";
+ personLoaded[1].password = "myPassword";
+
+ personLoaded[2].personType = STUDENT;
+ personLoaded[2].id = 3333;
+ personLoaded[2].CNIC = 464646466;
+ personLoaded[2].name = "Ahmed";
+ personLoaded[2].password = "password123";
+
+ personLoaded[3].personType = ADMIN;
+ personLoaded[3].id = 4444;
+ personLoaded[3].CNIC = 575757577;
+ personLoaded[3].name = "Sara";
+ personLoaded[3].password = "saraPass";
+
+
+ ofstream writer("personData.txt");
+ for (int i = 0; i < 4; i++)
+ {
+     writer << personLoaded[i].personType << "," << personLoaded[i].id << "," << personLoaded[i].name << "," << personLoaded[i].password << "," << personLoaded[i].CNIC << endl;
+ }
+ writer.close();
