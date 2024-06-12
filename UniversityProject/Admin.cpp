@@ -1,6 +1,33 @@
 #include "Admin.h"
+#include "Course.h"
 
+void Admin::handleAddNewCourse()
+{
+	
 
+}
+
+void Admin::handleManageCourse()
+{
+	int choice = -1;
+	do
+	{
+		cout << "1. View all Courses" << endl;
+		cout << "2. Add new Course" << endl;
+		cout << "3. Remove a Course" << endl;
+		cout << "4. Update a Course's record" << endl;
+		cout << "0. Back" << endl;
+		cin >> choice;
+	} while (choice != 0);
+
+	switch (choice)
+	{
+	case 2:
+		handleAddNewCourse();
+	default:
+		break;
+	}
+}
 
 void  Admin::handleManageStudents()
 {
@@ -14,7 +41,6 @@ void  Admin::handleManageStudents()
 		cout << "0. Back" << endl;
 		cin >> choice;
 	} while (choice != 0);
-
 
 }
 
@@ -47,6 +73,7 @@ void Admin::showMenuMenu()
 			handleManageStudents();
 			break;
 		case 3:
+			handleManageCourse();
 			break;
 		case 4:
 			break;

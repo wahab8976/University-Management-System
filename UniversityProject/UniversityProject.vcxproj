@@ -129,7 +129,9 @@
   <ItemGroup>
     <ClCompile Include="Admin.cpp" />
     <ClCompile Include="Course.cpp" />
+    <ClCompile Include="CourseCollection.cpp" />
     <ClCompile Include="Department.cpp" />
+    <ClCompile Include="DepartmentCollection.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="PersonCollection.cpp" />
     <ClCompile Include="Student.cpp" />
@@ -143,7 +145,9 @@
   <ItemGroup>
     <ClInclude Include="Admin.h" />
     <ClInclude Include="Course.h" />
+    <ClInclude Include="CourseCollection.h" />
     <ClInclude Include="Department.h" />
+    <ClInclude Include="DepartmentCollection.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="PersonCollection.h" />
     <ClInclude Include="Student.h" />

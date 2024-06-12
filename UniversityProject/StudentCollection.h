@@ -3,6 +3,7 @@
 
 class StudentCollection
 {
-	
+	Student* studentColl[100];
+
 };
 

@@ -22,7 +22,7 @@ enum deptAvailable
 };
 
 */
-
+/*
 enum courseAvailable
 {
 	webTech = 1,
@@ -31,6 +31,9 @@ enum courseAvailable
 	AI,
 	ML
 };
+
+*/
+
 
 class Utility
 {

@@ -4,6 +4,9 @@ class Course
 {
 	string  courseName, courseCode;
 	bool isAvailable;
-	int studentCount;
+	int studentCount, teacherCount;
+public:
+	void setCourseName(string tempCourseName);
+	void writeCourseData();
 };
 

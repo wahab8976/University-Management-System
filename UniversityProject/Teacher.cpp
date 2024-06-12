@@ -9,21 +9,22 @@ Teacher::Teacher()
 void Teacher::writeTeacherData()
 {
 	Teacher teacher[10];
-
-	teacher[0].name = "Umar Ali";
-	teacher[0].address = "District Gujrat";
-	teacher[0].attendPercent = 88;
-	teacher[0].CNIC = 23139893024;
-	teacher[0].courseTeaching = AI;
-	teacher[0].email = "umar@example.com";
-	teacher[0].gndr = MALE;
-	teacher[0].id = 2222;
-	teacher[0].isPaid = false;
-	teacher[0].password = "umar123";
-	teacher[0].phone = 323234244;
-	teacher[0].presentToday = true;
-	teacher[0].salary = 100000;
-	teacher[0].title = PROFESSOR;
+    /*
+    
+    teacher[0].name = "Umar Ali";
+    teacher[0].address = "District Gujrat";
+    teacher[0].attendPercent = 88;
+    teacher[0].CNIC = 23139893024;
+    teacher[0].courseTeaching = AI;
+    teacher[0].email = "umar@example.com";
+    teacher[0].gndr = MALE;
+    teacher[0].id = 2222;
+    teacher[0].isPaid = false;
+    teacher[0].password = "umar123";
+    teacher[0].phone = 323234244;
+    teacher[0].presentToday = true;
+    teacher[0].salary = 100000;
+    teacher[0].title = PROFESSOR;
 
     teacher[1].name = "Aisha Khan";
     teacher[1].address = "Islamabad";
@@ -71,6 +72,9 @@ void Teacher::writeTeacherData()
     teacher[3].presentToday = true;
     teacher[3].salary = 95000;
     teacher[3].title = LECTURER;
+    
+    */
+	
 
 
 

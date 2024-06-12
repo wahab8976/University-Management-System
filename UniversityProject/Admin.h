@@ -6,6 +6,11 @@ class Admin : public Person
 {
 public:
 	void showMenuMenu();
+	void handleManageCourse();
 	void handleManageStudents();
+
+
+
+	void handleAddNewCourse();
 };
 
