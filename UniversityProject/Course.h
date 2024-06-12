@@ -2,6 +2,8 @@
 #include "Utils.h"
 class Course
 {
-	courseAvailable course;
+	string  courseName, courseCode;
+	bool isAvailable;
+	int studentCount;
 };
 

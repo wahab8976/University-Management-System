@@ -45,6 +45,12 @@
     <ClCompile Include="Course.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TeacherCollection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StudentCollection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="University.h">
@@ -72,6 +78,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Course.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TeacherCollection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StudentCollection.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -3,7 +3,9 @@
 
 class Department
 {	
-	deptAvailable deptTeaching;
+	string deptName;
+	int maxStudents, maxTeachers;
+	bool isActive;
 
 };
 

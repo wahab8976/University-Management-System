@@ -4,6 +4,8 @@
 
 class Admin : public Person
 {
-	 
+public:
+	void showMenuMenu();
+	void handleManageStudents();
 };
 

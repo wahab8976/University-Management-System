@@ -1,4 +1,6 @@
 #include "University.h"
+#include "Utils.h"
+#include "Admin.h"
 
 	University::University()
 	{
@@ -19,7 +21,6 @@
 			{
 				personFound = true;
 				personFoundIndex = i;
-				cout << "at index " << i << endl;
 				break;
 			}
 		}
@@ -33,12 +34,22 @@
 		{
 			string tempPass = "";
 			cout << "Enter your Password: ";
-			getline(cin, tempPass);
-
+			while (true)	// Iterate if the password provided is empty
+			{
+				getline(cin, tempPass);		
+				if (tempPass.empty())
+				{
+					cout << "Please Provide a password: ";
+				}
+				else
+				{
+					break;
+				}
+			}
+			
 			if (tempPass == currentPerson.PersonColl[personFoundIndex]->password)
 			{
 				cout << "User Authenticated" << endl;
-
 			}
 			else
 			{
@@ -62,8 +73,8 @@
 		{
 		case ADMIN:
 		{
-			cout << "Admin" << endl;
-			cout << "Hello, " << loggedInUser->name << endl;
+			Admin* adminUser = static_cast<Admin*>(loggedInUser);
+			adminUser->showMenuMenu();
 			break;
 		}
 		break;

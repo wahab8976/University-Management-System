@@ -5,12 +5,17 @@
 
 class Teacher:public Person
 {
+public:
 	jobTitle title;
-	Course* courseTeaching;
+	courseAvailable courseTeaching;  // to be converted to pointer in future
 	int attendPercent;
 	bool presentToday;
 	float salary;
 	bool isPaid;
 	
+	Teacher();
+
+	void  writeTeacherData();
+
 };
 

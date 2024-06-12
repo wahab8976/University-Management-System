@@ -133,7 +133,9 @@
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="PersonCollection.cpp" />
     <ClCompile Include="Student.cpp" />
+    <ClCompile Include="StudentCollection.cpp" />
     <ClCompile Include="Teacher.cpp" />
+    <ClCompile Include="TeacherCollection.cpp" />
     <ClCompile Include="University.cpp" />
     <ClCompile Include="UniversityProjec.cpp" />
     <ClCompile Include="Utils.cpp" />
@@ -145,7 +147,9 @@
     <ClInclude Include="Person.h" />
     <ClInclude Include="PersonCollection.h" />
     <ClInclude Include="Student.h" />
+    <ClInclude Include="StudentCollection.h" />
     <ClInclude Include="Teacher.h" />
+    <ClInclude Include="TeacherCollection.h" />
     <ClInclude Include="University.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>

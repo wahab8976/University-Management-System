@@ -13,13 +13,15 @@ enum jobTitle
 	VC
 };
 
-
+/*
 enum deptAvailable
 {
 	CS = 1,
 	IT,
 	SE
 };
+
+*/
 
 enum courseAvailable
 {
