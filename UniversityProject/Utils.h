@@ -6,14 +6,29 @@
 using namespace std;
 
 
+enum jobTitle
+{
+	PROFESSOR = 1,
+	LECTURER,
+	VC
+};
 
 
+enum deptAvailable
+{
+	CS = 1,
+	IT,
+	SE
+};
 
-
-
-
-
-
+enum courseAvailable
+{
+	webTech = 1,
+	appDev,
+	desktopDev,
+	AI,
+	ML
+};
 
 class Utility
 {
