@@ -1,12 +1,13 @@
 #pragma once
-#include "Utilites.h"
+#include "Utils.h"
 
 class Person
 {
 public:
-	string name, password;
-	long long id, CNIC;
+	string name, password, address, email;
+	long long id, CNIC, phone;
 	Role personType;
+	Gender  gndr;
 
 	Person();
 

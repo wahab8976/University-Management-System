@@ -7,12 +7,11 @@
 
 	void University ::runSetup()
 	{
-		long tempId = 0;
 		bool personFound = false;
 		int personFoundIndex = -1;
 		cout << "WellCome..." << endl;
-		cout << "Enter Your ID" << endl;
-		cin >> tempId;
+		cout << "Enter your ID" << endl;
+		long long tempId = Utility::getNumericInput(4);
 
 		for (int i = 0; i < currentPerson.personCount; i++)
 		{
@@ -34,7 +33,6 @@
 		{
 			string tempPass = "";
 			cout << "Enter your Password: ";
-			cin.ignore();
 			getline(cin, tempPass);
 
 			if (tempPass == currentPerson.PersonColl[personFoundIndex]->password)
@@ -60,11 +58,12 @@
 			delete currentPerson.PersonColl[i];
 		}
 
-		switch (currentPerson.PersonColl[personFoundIndex]->personType)
+		switch (loggedInUser->personType)
 		{
 		case ADMIN:
 		{
 			cout << "Admin" << endl;
+			cout << "Hello, " << loggedInUser->name << endl;
 			break;
 		}
 		break;
