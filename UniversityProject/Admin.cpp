@@ -9,6 +9,9 @@ void Admin::handleAddNewCourse()
 
 void Admin::handleManageCourse()
 {
+
+
+
 	int choice = -1;
 	do
 	{
@@ -22,6 +25,9 @@ void Admin::handleManageCourse()
 
 	switch (choice)
 	{
+	case 1:
+
+		break;
 	case 2:
 		handleAddNewCourse();
 	default:
