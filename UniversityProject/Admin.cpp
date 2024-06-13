@@ -1,6 +1,22 @@
 #include "Admin.h"
 #include "Course.h"
 
+
+Admin::Admin(string name, string password, long long id, long long phone, long long CNIC) {
+	cout << "Admin is Created!" << endl;
+	this->name = name;
+	this->password = password;
+	this->id = id;
+	this->phone = phone;
+	this->CNIC = CNIC;
+
+}
+
+Admin::~Admin()
+{
+	cout << "Admin is  Deleted!" << endl;
+}
+
 void Admin::handleAddNewCourse()
 {
 	
@@ -9,8 +25,7 @@ void Admin::handleAddNewCourse()
 
 void Admin::handleManageCourse()
 {
-
-
+	currentCourse.loadCourseData();
 
 	int choice = -1;
 	do

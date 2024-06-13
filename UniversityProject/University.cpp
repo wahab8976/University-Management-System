@@ -58,6 +58,8 @@
 			}
 		}
 
+
+		/*
 		Person* loggedInUser = currentPerson.PersonColl[personFoundIndex]; // Person Pointer to hold current User who logged in
 
 		for (int i = 0; i < currentPerson.personCount; i++)
@@ -68,16 +70,35 @@
 			}
 			delete currentPerson.PersonColl[i];
 		}
+		
+		*/
 
-		switch (loggedInUser->personType)
+		Person* loggedInUser = currentPerson.PersonColl[personFoundIndex];
+
+		switch (loggedInUser->personType) 
 		{
 		case ADMIN:
 		{
-			Admin* adminUser = static_cast<Admin*>(loggedInUser);
+			// Create a new Admin object using the data from the authenticated Person
+			Admin* adminUser = new Admin(loggedInUser->name, loggedInUser->password, loggedInUser->id, loggedInUser->phone, loggedInUser->CNIC);
+
+			// Clean up other users except the logged in user
+			for (int i = 0; i < currentPerson.personCount; i++)
+			{
+				if (currentPerson.PersonColl[i] != loggedInUser)
+				{
+					cout << "Deleting " << currentPerson.PersonColl[i]->name << endl;
+					delete currentPerson.PersonColl[i];
+				}
+			}
+
+			// Show admin menu
 			adminUser->showMenuMenu();
+			cout << "After menu Execution~" << endl;
+			// Clean up the admin user object after usage
+			delete adminUser;
 			break;
 		}
-		break;
 		case TEACHER:
 			cout << "Teacher" << endl;
 			break;

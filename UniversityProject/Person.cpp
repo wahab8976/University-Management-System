@@ -6,6 +6,15 @@
 	Person::Person()
 	{
 		email = address = "Annonymous";
+
+		cout << "Person is created!" << endl;
+	}
+
+	Person::~Person()
+	{
+		email = address = "Annonymous";
+
+		cout << "Person is destroyed!" << endl;
 	}
 
 	void Person:: splitPersonData(string  line)
