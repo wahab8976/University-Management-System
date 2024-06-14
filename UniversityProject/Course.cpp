@@ -23,7 +23,6 @@ void Course::writeCourseData()
 
     writer.close();
 
-
 }
 
 */
@@ -32,8 +31,6 @@ void Course::writeCourseData()
 
 void Course::splitCardData(string line)
 {
-	cout << "Spliting....." <<line<< endl;
-    
     //Extract course Name
     size_t pos = line.find(",");
     string token = line.substr(0, pos);
@@ -42,7 +39,7 @@ void Course::splitCardData(string line)
 
     pos = line.find(",");
     token = line.substr(0, pos);
-    courseName = token;
+    courseCode = token;
     line.erase(0, pos + 1);
 
     // Extract availability
