@@ -14,55 +14,6 @@ Admin::Admin(string name, string password, long long id, long long phone, long l
 
 }
 
-void Admin::handleShowAllCourses()
-{
-	if (currentCourse.courseCount == 0)
-	{
-		cout << "No courses  to show" << endl;
-		return;
-	}
-
-	cout << "Total Courses: " << currentCourse.courseCount << endl;
-
-	const int courseNameWidth = 40; // Wider column for course name
-	const int courseCodeWidth = 30; // Adjusted width for course code
-	const int otherColWidth = 20; // Width for other columns
-
-	// Table Header
-	cout << left << setw(courseNameWidth) << "Course Name"
-		<< setw(courseCodeWidth) << "Course Code"
-		<< setw(otherColWidth) << "Teachers Available"
-		<< setw(otherColWidth) << "Students Enrolled"
-		<< setw(otherColWidth) << "Available?" << endl;
-
-	// Separator line
-	cout << left << setw(courseNameWidth) << "----------------------------------------"
-		<< setw(courseCodeWidth) << "------------------------------"
-		<< setw(otherColWidth) << "--------------------"
-		<< setw(otherColWidth) << "--------------------"
-		<< setw(otherColWidth) << "--------------------" << endl;
-
-	// Table Rows
-	for (int i = 0; i < currentCourse.courseCount; i++)
-	{
-		
-		cout << setw(courseNameWidth) << currentCourse.courseColl[i].courseCode
-			<< setw(courseCodeWidth) << currentCourse.courseColl[i].courseName
-			<< setw(otherColWidth) << currentCourse.courseColl[i].teacherCount ;
-
-		//Checking if course is not available then show students count as --
-		if (currentCourse.courseColl[i].isAvailable)
-		{
-			cout << setw(otherColWidth) << currentCourse.courseColl[i].studentCount;
-		}
-		else
-		{
-			cout << setw(otherColWidth) << "-- ";
-		}
-		cout<< setw(otherColWidth) << (currentCourse.courseColl[i].isAvailable ? "Yes" : "No") << endl;
-	}
-	cout << endl;
-}
 
 
 Admin::~Admin()
@@ -70,11 +21,7 @@ Admin::~Admin()
 	cout << "Admin is  Deleted!" << endl;
 }
 
-void Admin::handleAddNewCourse()
-{
-	
 
-}
 
 void Admin::handleManageCourse()
 {
@@ -93,15 +40,24 @@ void Admin::handleManageCourse()
 		switch (choice)
 		{
 		case 1:
-			handleShowAllCourses();
+			currentCourse.handleShowAllCourses();
 			break;
 		case 2:
-			handleAddNewCourse();
+			currentCourse.handleAddNewCourse();
 		default:
 			break;
 		}
 	} while (choice != 0);
 
+	/*
+	for (int i = 0; i < currentCourse.courseCount; i++)
+	{
+		delete currentCourse.courseColl[i];
+	}
+	return;
+	*/
+
+	
 	
 }
 

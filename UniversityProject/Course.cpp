@@ -8,59 +8,76 @@ Course::Course()
 	cout << "Course is  created" << endl;
 }
 
-
-
-/*
-void Course::writeCourseData()
+Course::~Course()
 {
-
-
-    ofstream writer("CourseData.txt");
-    for (int i = 0; i < 4; i++)
-    {
-        writer << coursetowrite[i].courseCode << "," << coursetowrite[i].courseName << "," << coursetowrite[i].isAvailable << "," << coursetowrite[i].studentCount << "," << coursetowrite[i].teacherCount << endl;
-    }
-
-    writer.close();
-
+	cout << "Course is  Destroyed" << endl;
 }
 
-*/
+
+void Course::setCourseCode(string code)
+{
+	courseCode = code;
+	cout << "Course code added" << endl;
+	return;
+}
+
+void Course::setCourseName(string name)
+{
+
+	courseName = name;
+	cout << "Course name added" << endl;
+	return;
+}
+
+void Course::writeCourseData()
+{
+	cout << "Writing Data" << endl;
+	ofstream writer("CourseData.txt", ios::app);
+
+	if (!writer) {
+		cout << "Error: Unable to open file for writing." << endl;
+		return;
+	}
+
+	isAvailable = 1;
+	studentCount = 0;
+	teacherCount = 0;
+	writer << courseCode << "," << courseName << "," << isAvailable << "," << studentCount << "," << teacherCount << endl;
+
+	
+	cout << "Data Added Successfully" << endl;
+	
+}
 
 
 
 void Course::splitCardData(string line)
 {
-    //Extract course Name
-    size_t pos = line.find(",");
-    string token = line.substr(0, pos);
-    courseName = token;
-    line.erase(0, pos + 1);
+	//Extract course Name
+	size_t pos = line.find(",");
+	string token = line.substr(0, pos);
+	courseName = token;
+	line.erase(0, pos + 1);
 
-    pos = line.find(",");
-    token = line.substr(0, pos);
-    courseCode = token;
-    line.erase(0, pos + 1);
+	pos = line.find(",");
+	token = line.substr(0, pos);
+	courseCode = token;
+	line.erase(0, pos + 1);
 
-    // Extract availability
-    pos = line.find(",");
-    token = line.substr(0, pos);
-    isAvailable = stoi(token);
-    line.erase(0, pos + 1);
+	// Extract availability
+	pos = line.find(",");
+	token = line.substr(0, pos);
+	isAvailable = stoi(token);
+	line.erase(0, pos + 1);
 
-    // Extract student count
-    pos = line.find(",");
-    token = line.substr(0, pos);
-    studentCount = stoi(token);
-    line.erase(0, pos + 1);
+	// Extract student count
+	pos = line.find(",");
+	token = line.substr(0, pos);
+	studentCount = stoi(token);
+	line.erase(0, pos + 1);
 
-    // Extract teacher count
-    teacherCount = stoi(line); // Remaining line is the teacher count
+	// Extract teacher count
+	teacherCount = stoi(line); // Remaining line is the teacher count
 }
 
-void Course::setCourseName(string tempCourseName)
-{
-	courseName = tempCourseName;
-	cout << "Course Name: " << courseName << endl;
-}
 

@@ -8,9 +8,11 @@ public:
 	int studentCount, teacherCount;
 
 	Course();
-
-	void setCourseName(string tempCourseName);
+	~Course();
+	
 	void splitCardData(string line);
-	//void writeCourseData();
+	void writeCourseData();
+	void setCourseName(string name);
+	void setCourseCode(string code);
 };
 

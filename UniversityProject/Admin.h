@@ -14,8 +14,6 @@ public:
 	void showMenuMenu();
 	void handleManageCourse();
 	void handleManageStudents();
-	void handleShowAllCourses();
 
-	void handleAddNewCourse();
 };
 

@@ -6,10 +6,14 @@
 class CourseCollection
 {
 public:
-	Course courseColl[20];
+	Course* courseColl[20];
 	int studentCount, teacherCount, courseCount;
 	CourseCollection();
+	~CourseCollection();
+
 
 	void loadCourseData();
+	void handleAddNewCourse();
+	void handleShowAllCourses();
 };
 
