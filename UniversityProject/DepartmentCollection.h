@@ -4,6 +4,15 @@
 
 class DepartmentCollection
 {
-	Department* department[10];
+public:
+	Department departmentColl[100];
+	int deptCount;
+
+
+	DepartmentCollection();
+	void loadDepartmentData();
+	void handleAddNewDepartment();
+	void handleDisplayAllDepartment();
+	//void writeDepartmentData();
 };
 

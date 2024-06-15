@@ -2,9 +2,10 @@
 #include "Course.h"
 #include "CourseCollection.h"
 #include <iomanip>
+#include "Department.h"
 
-
-Admin::Admin(string name, string password, long long id, long long phone, long long CNIC) {
+Admin::Admin(string name, string password, long long id, long long phone, long long CNIC) 
+{
 	cout << "Admin is Created!" << endl;
 	this->name = name;
 	this->password = password;
@@ -20,6 +21,40 @@ Admin::~Admin()
 {
 	cout << "Admin is  Deleted!" << endl;
 }
+
+
+
+
+void Admin:: handleManageDepartments()
+{
+	currentDept.loadDepartmentData();
+
+	int choice = -1;
+	do
+	{
+		cout << "1. View All Departments" << endl;
+		cout << "2. Add New Department" << endl;
+		cout << "3. Remove a Department" << endl;
+		cout << "0. Back" << endl;
+		cin >> choice;
+
+		switch (choice)
+		{
+		case 1:
+			currentDept.handleDisplayAllDepartment();
+			break;
+		case 2:
+			currentDept.handleAddNewDepartment();
+			break;
+		case 3:
+
+			break;
+		default:
+			break;
+		}
+	} while (choice!=0);
+}
+
 
 
 
@@ -120,6 +155,7 @@ void Admin::showMenuMenu()
 			handleManageCourse();
 			break;
 		case 4:
+			handleManageDepartments();
 			break;
 		default:
 			cout << "Invalid Choice!" << endl;

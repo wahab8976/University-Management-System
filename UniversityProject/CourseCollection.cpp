@@ -3,13 +3,16 @@
 #include "Course.h"
 
 
-CourseCollection::CourseCollection() {
+CourseCollection::CourseCollection() 
+{
     courseCount = 0;
     cout << "Card Collection created..." << endl;
 }
 
-CourseCollection::~CourseCollection() {
-    for (int i = 0; i < courseCount; i++) {
+CourseCollection::~CourseCollection() 
+{
+    for (int i = 0; i < courseCount; i++) 
+    {
         delete courseColl[i];
     }
     cout << "Course Collection destroyed..." << endl;
@@ -36,10 +39,12 @@ void CourseCollection::handleAddNewCourse()
     courseCount++;
 }
 
-void CourseCollection::loadCourseData() {
+void CourseCollection::loadCourseData()
+{
     ifstream reader("CourseData.txt");
 
-    if (!reader.is_open()) {
+    if (!reader.is_open())
+    {
         cout << "Error opening course data file." << endl;
         return;
     }
@@ -47,7 +52,8 @@ void CourseCollection::loadCourseData() {
     courseCount = 0; // Reset courseCount before loading
 
     string line;
-    while (getline(reader, line)) {
+    while (getline(reader, line))
+    {
         
 
         courseColl[courseCount] = new Course();
@@ -58,8 +64,10 @@ void CourseCollection::loadCourseData() {
     reader.close(); // Close file after reading
 }
 
-void CourseCollection::handleShowAllCourses() {
-    if (courseCount == 0) {
+void CourseCollection::handleShowAllCourses()
+{
+    if (courseCount == 0)
+    {
         cout << "No courses to show." << endl;
         return;
     }
@@ -90,10 +98,12 @@ void CourseCollection::handleShowAllCourses() {
             << setw(courseCodeWidth) << courseColl[i]->courseCode
             << setw(otherColWidth) << courseColl[i]->teacherCount;
 
-        if (courseColl[i]->isAvailable) {
+        if (courseColl[i]->isAvailable)
+        {
             cout << setw(otherColWidth) << courseColl[i]->studentCount;
         }
-        else {
+        else 
+        {
             cout << setw(otherColWidth) << "--";
         }
         cout << setw(otherColWidth) << (courseColl[i]->isAvailable ? "Yes" : "No") << endl;
