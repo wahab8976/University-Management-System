@@ -15,5 +15,7 @@ public:
 	void handleDisplayAllDepartment();
 	int	 handleSearchDepartment(string code);
 	void getDept(int index);
+	void handleUpDateDepartment();
+	void handleDeleteDepartment();
 };
 

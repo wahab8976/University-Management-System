@@ -1,2 +1,4 @@
-ZL,Zoology,1,20,-842150451
+AB-1,ZB,1,1,1
 BT,Dept of Botany,1,1000,10
+AB Black,Ali baba,1,1212,1212
+CS,Computer Science,1,1000,20

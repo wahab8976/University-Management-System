@@ -111,13 +111,13 @@ void DepartmentCollection::handleAddNewDepartment()
     cin.ignore();
 
     departmentColl[deptCount] = new Department();
-    cout << "Enter course name:" << endl;
+    cout << "Enter Department name:" << endl;
     string tempName;
     getline(cin, tempName);
     departmentColl[deptCount]->setDeptName(tempName);
 
 
-    cout << "Enter course code:" << endl;
+    cout << "Enter Department code:" << endl;
     string tempCode;
     getline(cin, tempCode);
     departmentColl[deptCount]->setDeptCode(tempCode);
@@ -160,4 +160,99 @@ int DepartmentCollection::handleSearchDepartment(string code)
     {
         return foundDeptIndex;
     }
+}
+
+
+void DepartmentCollection::handleDeleteDepartment()
+{
+    cin.ignore();
+    string code = "";
+    cout << "Enter Department Code: ";
+    getline(cin, code);
+
+    int responseIndex = handleSearchDepartment(code);
+    if (responseIndex == -1)
+    {
+        cout << "Department not Found" << endl;
+        return;
+    }
+    else
+    {
+        delete departmentColl[responseIndex];
+        departmentColl[responseIndex] = nullptr;
+        deptCount--;
+
+        ofstream writer("DepartmentData.txt");
+
+        for (int i = 0; i < deptCount; i++)
+        {
+            if (i == responseIndex)
+            {
+                continue;
+            }
+            writer << departmentColl[i]->deptCode << "," << departmentColl[i]->deptName << "," << departmentColl[i]->isActive << "," << departmentColl[i]->maxStudents << "," << departmentColl[i]->maxTeachers << endl;
+        }
+        writer.close();
+    }
+}
+
+void DepartmentCollection::handleUpDateDepartment()
+{
+    cin.ignore();
+    string name, code = "";
+    bool setActive = true;
+
+    cout << "Enter Department Code: ";
+    getline(cin, code);
+
+    int responseIndex = handleSearchDepartment(code);
+    if (responseIndex == -1)
+    {
+        cout << "Department not Found" << endl;
+        return;
+    }
+
+    cin.ignore();
+
+    string newName, newCode = "";
+    int newMaxSt, newMaxTeach = 0;
+    cout << "Enter new Name: ";
+    getline(cin, newName);
+
+    cout << "Enter new Code: ";
+    getline(cin, newCode);
+
+    cout << "Enter new Max Students: ";
+    cin >> newMaxSt;
+    cin.ignore();
+
+    cout << "Enter new Max Teachers: ";
+    cin >> newMaxTeach;
+    cin.ignore();
+
+    /*
+    cout << "Set Currently Active:?";
+    cout << "1. Yes\n2.No" << endl;
+    cin >> setActive;
+    */
+    
+
+    departmentColl[responseIndex]->deptName = newName;
+    departmentColl[responseIndex]->deptCode = newCode;
+    departmentColl[responseIndex]->maxStudents = newMaxSt;
+    departmentColl[responseIndex]->maxTeachers = newMaxTeach;
+
+    ofstream writer("DepartmentData.txt", ios::out | ios::trunc);
+    for (int i = 0; i < deptCount; i++)
+    {
+        if (i == responseIndex)
+        {
+            writer << departmentColl[i]->deptCode << "," << departmentColl[i]->deptName << "," << departmentColl[i]->isActive << "," << departmentColl[i]->maxStudents << "," << departmentColl[i]->maxTeachers << endl;
+        }
+        else
+        {
+            writer << departmentColl[i]->deptCode << "," << departmentColl[i]->deptName << "," << departmentColl[i]->isActive << "," << departmentColl[i]->maxStudents << "," << departmentColl[i]->maxTeachers << endl;
+        }
+    }
+    writer.close();
 }

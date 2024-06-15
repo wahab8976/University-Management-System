@@ -1,5 +1,5 @@
 #include "Admin.h"
-#include <iostream>
+#include "Utils.h"
 
 
 Admin::Admin(string name, string password, long long id, long long phone, long long CNIC)
@@ -22,7 +22,8 @@ void Admin::handleManageDepartments() {
     currentDept.loadDepartmentData();
 
     int choice = -1;
-    do {
+    do 
+    {
         cout << "1. View All Departments" << endl;
         cout << "2. Add New Department" << endl;
         cout << "3. Remove a Department" << endl;
@@ -40,10 +41,11 @@ void Admin::handleManageDepartments() {
             currentDept.handleAddNewDepartment();
             break;
         case 3:
+            currentDept.handleDeleteDepartment();
             // Implement remove department functionality
             break;
         case 4:
-
+            currentDept.handleUpDateDepartment();
             break;
         case 5:
             {   
@@ -138,7 +140,8 @@ void Admin::handleManageCourse()
 void Admin::handleManageStudents() 
 {
     int choice = -1;
-    do {
+    do 
+    {
         cout << "1. View all Students" << endl;
         cout << "2. Add new Student" << endl;
         cout << "3. Remove a Student" << endl;
@@ -146,7 +149,8 @@ void Admin::handleManageStudents()
         cout << "0. Back" << endl;
         cin >> choice;
 
-        switch (choice) {
+        switch (choice) 
+        {
         case 1:
             // Implement view all students functionality
             break;
