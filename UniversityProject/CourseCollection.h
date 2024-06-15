@@ -15,5 +15,9 @@ public:
 	void loadCourseData();
 	void handleAddNewCourse();
 	void handleShowAllCourses();
+
+
+	int handleCourseSearch(string code);
+	void  getCourse(int index);
 };
 

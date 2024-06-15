@@ -54,9 +54,9 @@ void Admin::handleManageDepartments() {
     return;
 }
 
-void Admin::handleManageCourse() 
-{
 
+void Admin::handleManageCourse()
+{
     currentCourse.loadCourseData();
     int choice = -1;
     do {
@@ -64,6 +64,7 @@ void Admin::handleManageCourse()
         cout << "2. Add new Course" << endl;
         cout << "3. Remove a Course" << endl;
         cout << "4. Update a Course's record" << endl;
+        cout << "5. Search a Course" << endl;
         cout << "0. Back" << endl;
         cin >> choice;
 
@@ -80,12 +81,27 @@ void Admin::handleManageCourse()
         case 4:
             // Implement update course functionality
             break;
+        case 5:
+        {
+            string tempCode = "";
+            int responseIndex = -1;
+            cin.ignore();
+            cout << "Enter the Course Code: ";
+            getline(cin, tempCode);
+            responseIndex = currentCourse.handleCourseSearch(tempCode);
+            if (responseIndex == -1)
+            {
+                cout << "Course Not Found" << endl;
+                break;
+            }
+            currentCourse.getCourse(responseIndex);
+        }
+        break;
         default:
             cout << "Invalid Choice!" << endl;
             break;
         }
     } while (choice != 0);
-
 
     // Deleting Courses Dynamically after user chooses to exit
     for (int i = 0; i < currentCourse.courseCount; i++)
@@ -94,8 +110,9 @@ void Admin::handleManageCourse()
     }
     currentCourse.courseCount = 0; // Reset course Count to 0 to ensure proper check for next time
     return;
-    
 }
+
+
 
 void Admin::handleManageStudents() {
     int choice = -1;

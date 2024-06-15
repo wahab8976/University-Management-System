@@ -56,12 +56,12 @@ void Course::splitCardData(string line)
 	//Extract course Name
 	size_t pos = line.find(",");
 	string token = line.substr(0, pos);
-	courseName = token;
+	courseCode = token;
 	line.erase(0, pos + 1);
 
 	pos = line.find(",");
 	token = line.substr(0, pos);
-	courseCode = token;
+	courseName = token;
 	line.erase(0, pos + 1);
 
 	// Extract availability

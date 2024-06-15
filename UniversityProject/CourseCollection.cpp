@@ -18,6 +18,70 @@ CourseCollection::~CourseCollection()
     cout << "Course Collection destroyed..." << endl;
 }
 
+int CourseCollection::handleCourseSearch(string code)
+{
+    bool courseFound = false;
+    int courseFoundIndex = -1;
+
+    for (int i = 0; i < courseCount; i++)
+    {
+        if (courseColl[i] != nullptr && code == courseColl[i]->courseCode)
+        {
+            courseFound = true;
+            courseFoundIndex = i;
+            break;
+        }
+    }
+
+    if (!courseFound)
+    {
+        return -1; // Return -1 if course not matched for conditional matching
+    }
+    else
+    {
+        return courseFoundIndex;
+    }
+}
+
+
+void  CourseCollection::getCourse(int index)
+{
+    const int courseCodeWidth = 20; // Width for course code
+    const int courseNameWidth = 40; // Wider column for course name
+    const int otherColWidth = 20; // Width for other columns
+
+    // Table Header
+    cout << left << setw(courseCodeWidth) << "Course Code"
+        << setw(courseNameWidth) << "Course Name"
+        << setw(otherColWidth) << "Available"
+        << setw(otherColWidth) << "Students Enrolled"
+        << setw(otherColWidth) << "Teachers Available" << endl;
+
+    // Separator line
+    cout << left << setw(courseCodeWidth) << "--------------------"
+        << setw(courseNameWidth) << "----------------------------------------"
+        << setw(otherColWidth) << "--------------------"
+        << setw(otherColWidth) << "--------------------"
+        << setw(otherColWidth) << "--------------------" << endl;
+
+    // Table Row
+    cout << setw(courseCodeWidth) << courseColl[index]->courseCode
+        << setw(courseNameWidth) << courseColl[index]->courseName
+        << setw(otherColWidth) << (courseColl[index]->isAvailable ? "Yes" : "No");
+
+    if (courseColl[index]->isAvailable)
+    {
+        cout << setw(otherColWidth) << courseColl[index]->studentCount;
+    }
+    else
+    {
+        cout << setw(otherColWidth) << "--";
+    }
+    cout << setw(otherColWidth) << courseColl[index]->teacherCount << endl;
+
+    cout << endl;
+}
+
 void CourseCollection::handleAddNewCourse()
 {
     
