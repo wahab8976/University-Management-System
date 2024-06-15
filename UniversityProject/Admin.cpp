@@ -26,10 +26,13 @@ void Admin::handleManageDepartments() {
         cout << "1. View All Departments" << endl;
         cout << "2. Add New Department" << endl;
         cout << "3. Remove a Department" << endl;
+        cout << "4. Update a Department" << endl;
+        cout << "5. Search a Department" << endl;
         cout << "0. Back" << endl;
         cin >> choice;
 
-        switch (choice) {
+        switch (choice) 
+        {
         case 1:
             currentDept.handleDisplayAllDepartment();
             break;
@@ -38,6 +41,25 @@ void Admin::handleManageDepartments() {
             break;
         case 3:
             // Implement remove department functionality
+            break;
+        case 4:
+
+            break;
+        case 5:
+            {   
+            string tempCode = "";
+            int responseIndex = -1;
+            cin.ignore();
+            cout << "Enter the Department Code: ";
+            getline(cin, tempCode);
+            responseIndex = currentDept.handleSearchDepartment(tempCode);
+            if (responseIndex == -1)
+            {
+                cout << "Department Not Found" << endl;
+                break;
+            }
+            currentDept.getDept(responseIndex);
+            }
             break;
         default:
             cout << "Invalid Choice!" << endl;
@@ -113,8 +135,8 @@ void Admin::handleManageCourse()
 }
 
 
-
-void Admin::handleManageStudents() {
+void Admin::handleManageStudents() 
+{
     int choice = -1;
     do {
         cout << "1. View all Students" << endl;

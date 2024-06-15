@@ -43,63 +43,43 @@ void DepartmentCollection::handleDisplayAllDepartment()
 
 
 
-/*
-
-
-void DepartmentCollection::writeDepartmentData()
-{
-    ofstream writer("DepartmentData.txt");
-
-    departmentColl[0].deptName = "Computer Science";
-    departmentColl[0].deptCode = "CS";
-    departmentColl[0].isActive = 1;
-    departmentColl[0].maxStudents = 1000;
-    departmentColl[0].maxTeachers = 20;
-
-    // Dummy initialization for other departments
-    departmentColl[1].deptName = "Electrical Engineering";
-    departmentColl[1].deptCode = "EE";
-    departmentColl[1].isActive = 1;
-    departmentColl[1].maxStudents = 800;
-    departmentColl[1].maxTeachers = 15;
-
-    departmentColl[2].deptName = "Mechanical Engineering";
-    departmentColl[2].deptCode = "ME";
-    departmentColl[2].isActive = 0;
-    departmentColl[2].maxStudents = 900;
-    departmentColl[2].maxTeachers = 18;
-
-    departmentColl[3].deptName = "Physics";
-    departmentColl[3].deptCode = "PHY";
-    departmentColl[3].isActive = 0;
-    departmentColl[3].maxStudents = 500;
-    departmentColl[3].maxTeachers = 10;
-
-    departmentColl[4].deptName = "Mathematics";
-    departmentColl[4].deptCode = "MATH";
-    departmentColl[4].isActive = 1;
-    departmentColl[4].maxStudents = 700;
-    departmentColl[4].maxTeachers = 12;
-
-
-    for (int i = 0; i < 5; i++)
-    {
-        cout << "Writingg" << endl;
-        writer << departmentColl[i].deptCode << "," << departmentColl[i].deptName << "," << departmentColl[i].isActive << "," << departmentColl[i].maxStudents << "," << departmentColl[i].maxTeachers << endl;
-    }
-
-    writer.close();
-}
-
-
-*/
-
 
 DepartmentCollection::DepartmentCollection()
 {
     deptCount = 0;
 }
 
+
+
+void DepartmentCollection::getDept(int index)
+{
+    const int deptCodeWidth = 20; // Width for department code
+    const int deptNameWidth = 40; // Wider column for department name
+    const int otherColWidth = 20; // Width for other columns
+
+    // Table Header
+    cout << left << setw(deptCodeWidth) << "Department Code"
+        << setw(deptNameWidth) << "Department Name"
+        << setw(otherColWidth) << "Active"
+        << setw(otherColWidth) << "Faculty Count"
+        << setw(otherColWidth) << "Student Count" << endl;
+
+    // Separator line
+    cout << left << setw(deptCodeWidth) << "--------------------"
+        << setw(deptNameWidth) << "----------------------------------------"
+        << setw(otherColWidth) << "--------------------"
+        << setw(otherColWidth) << "--------------------"
+        << setw(otherColWidth) << "--------------------" << endl;
+
+    // Table Row
+    cout << setw(deptCodeWidth) << departmentColl[index]->deptCode
+        << setw(deptNameWidth) << departmentColl[index]->deptName
+        << setw(otherColWidth) << (departmentColl[index]->isActive ? "Yes" : "No")
+        << setw(otherColWidth) << departmentColl[index]->maxTeachers
+        << setw(otherColWidth) << departmentColl[index]->maxStudents << endl;
+
+    cout << endl;
+}
 
 void DepartmentCollection::loadDepartmentData()
 {
@@ -127,64 +107,57 @@ void DepartmentCollection::loadDepartmentData()
 
 void DepartmentCollection::handleAddNewDepartment()
 {
-	string tempName, tempCode;
-	cin.ignore();
-	cout << "Enter Name of Department:" << endl;
-	getline(cin, tempName);
+    int maxSt, maxTch;
+    cin.ignore();
 
-	cout << "Enter code of Department:" << endl;
-	getline(cin, tempCode);
+    departmentColl[deptCount] = new Department();
+    cout << "Enter course name:" << endl;
+    string tempName;
+    getline(cin, tempName);
+    departmentColl[deptCount]->setDeptName(tempName);
 
 
-	//departmentColl[0]->writeDepartmentData();
+    cout << "Enter course code:" << endl;
+    string tempCode;
+    getline(cin, tempCode);
+    departmentColl[deptCount]->setDeptCode(tempCode);
 
+
+    cout << "Enter Maximum number of Students" << endl;
+    cin >> maxSt;
+    departmentColl[deptCount]->setMaxStud(maxSt);
+
+    cout << "Enter Maximum number of Teachers" << endl;
+    cin >> maxTch;
+    departmentColl[deptCount]->setMaxTeach(maxTch);
+
+
+    departmentColl[deptCount]->writeDepartmentData();
+    deptCount++;
 }
-/*
 
 
-void DepartmentCollection::writeDepartmentData()
+int DepartmentCollection::handleSearchDepartment(string code)
 {
+    bool deptFound = false;
+    int foundDeptIndex = -1;
 
-    departmentColl[0]->deptName = "Computer Science";
-    departmentColl[0]->deptCode = "CS";
-    departmentColl[0]->isActive = true;
-    departmentColl[0]->maxStudents = 1000;
-    departmentColl[0]->maxTeachers = 20;
-
-    departmentColl[1]->deptName = "Electrical Engineering";
-    departmentColl[1]->deptCode = "EE";
-    departmentColl[1]->isActive = true;
-    departmentColl[1]->maxStudents = 800;
-    departmentColl[1]->maxTeachers = 15;
-
-    departmentColl[2]->deptName = "Mechanical Engineering";
-    departmentColl[2]->deptCode = "ME";
-    departmentColl[2]->isActive = true;
-    departmentColl[2]->maxStudents = 900;
-    departmentColl[2]->maxTeachers = 18;
-
-    departmentColl[3]->deptName = "Physics";
-    departmentColl[3]->deptCode = "PHY";
-    departmentColl[3]->isActive = false;
-    departmentColl[3]->maxStudents = 500;
-    departmentColl[3]->maxTeachers = 10;
-
-    departmentColl[4]->deptName = "Mathematics";
-    departmentColl[4]->deptCode = "MATH";
-    departmentColl[4]->isActive = true;
-    departmentColl[4]->maxStudents = 700;
-    departmentColl[4]->maxTeachers = 12;
-
-    ofstream writer("DepartmentData.txt");
-
-    for (int i =0 ; i < 5;i++)
+    for (int i = 0; i < deptCount; i++)
     {
-        writer<<departmentColl[i]->deptCode<<","<< departmentColl[i]->deptName<<","<< departmentColl[i]->isActive<<","<< departmentColl[i]->maxStudents<<","<< departmentColl[i]->maxTeachers<<endl;
+        if (departmentColl[i] != nullptr && code == departmentColl[i]->deptCode)
+        {
+            deptFound = true;
+            foundDeptIndex = i;
+            break;
+        }
     }
-    writer.close();
 
+    if (!deptFound)
+    {
+        return -1; // Return -1 if course not matched for conditional matching
+    }
+    else
+    {
+        return foundDeptIndex;
+    }
 }
-
-
-*/
-

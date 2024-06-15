@@ -18,6 +18,9 @@ CourseCollection::~CourseCollection()
     cout << "Course Collection destroyed..." << endl;
 }
 
+
+
+
 int CourseCollection::handleCourseSearch(string code)
 {
     bool courseFound = false;
@@ -42,6 +45,8 @@ int CourseCollection::handleCourseSearch(string code)
         return courseFoundIndex;
     }
 }
+
+
 
 
 void  CourseCollection::getCourse(int index)

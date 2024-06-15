@@ -1,8 +1,6 @@
 #pragma once
 #include"Utils.h"
 
-
-
 class Department
 {
 public:
@@ -12,7 +10,14 @@ public:
 
 	Department();
 	~Department();
-	void handleManageDepartments();
+
 	void splitDepartmentData(string line);
+	void setDeptName(string name);
+	void setDeptCode(string code);
+	void setMaxStud(int st);
+	void setMaxTeach(int tch);
+	void writeDepartmentData();
+
+
 };
 

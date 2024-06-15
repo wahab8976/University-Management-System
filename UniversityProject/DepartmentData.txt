@@ -1,20 +1,2 @@
-BIO,Biology,0,600,11
-CHEM,Chemistry,1,850,17
-CSAI,Computer Science and Artificial Intelligence,1,1100,22
-CE,Civil Engineering,0,950,19
-ENV,Environmental Science,0,700,13
-STAT,Statistics,1,750,14
-AERO,Aeronautical Engineering,0,920,16
-GEO,Geology,1,520,9
-PHAR,Pharmacy,1,870,18
-PSY,Psychology,0,630,12
-ECON,Economics,1,780,15
-ASTRO,Astronomy,0,680,10
-ART,Art and Design,1,470,8
-LAW,Law,0,1050,21
-MED,Medicine,1,1200,25
-HIST,History,0,540,10
-PHIL,Philosophy,1,610,11
-LING,Linguistics,0,490,9
-SOC,Sociology,1,720,14
-ANTH,Anthropology,0,570,10
+ZL,Zoology,1,20,-842150451
+BT,Dept of Botany,1,1000,10

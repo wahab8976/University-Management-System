@@ -13,6 +13,7 @@ public:
 	void loadDepartmentData();
 	void handleAddNewDepartment();
 	void handleDisplayAllDepartment();
-	//void writeDepartmentData();
+	int	 handleSearchDepartment(string code);
+	void getDept(int index);
 };
 
