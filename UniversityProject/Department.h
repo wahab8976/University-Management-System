@@ -9,6 +9,7 @@ public:
 	bool isActive;
 
 	Department();
+	Department(string newCode, string  newName, bool setActive, int  newMaxTeach, int newMaxSt);
 	~Department();
 
 	void splitDepartmentData(string line);

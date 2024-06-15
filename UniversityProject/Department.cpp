@@ -9,7 +9,20 @@ Department::~Department()
 
 Department::Department()
 {
-	cout << "Department is Created!" << endl;
+	//cout << "Department is Created!" << endl;
+	cout << "Def  Constructor" << endl;
+}
+
+// Takes values when update Fn runs
+Department::Department(string newCode, string  newName, bool setActive,int  newMaxTeach, int newMaxSt)
+{
+	//cout << "Department is Created!" << endl;
+	deptCode = newCode;
+	deptName = newName;
+	isActive = setActive;
+	maxStudents = newMaxSt;
+	maxTeachers = newMaxTeach;
+	cout << "Department is Created SuccessFully!" << endl;
 }
 
 

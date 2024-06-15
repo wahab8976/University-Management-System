@@ -19,7 +19,10 @@ CourseCollection::~CourseCollection()
 }
 
 
+void CourseCollection::handleAddDeleteCourse()
+{
 
+}
 
 int CourseCollection::handleCourseSearch(string code)
 {

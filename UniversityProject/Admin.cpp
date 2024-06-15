@@ -42,7 +42,6 @@ void Admin::handleManageDepartments() {
             break;
         case 3:
             currentDept.handleDeleteDepartment();
-            // Implement remove department functionality
             break;
         case 4:
             currentDept.handleUpDateDepartment();
