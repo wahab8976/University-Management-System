@@ -48,9 +48,15 @@ void Department::setMaxTeach(int maxTeach)
 }
 
 
+void Department::setActivity(bool setActive)
+{
+	isActive = setActive;
+	return;
+
+}
+
 void Department::writeDepartmentData()
 {
-	isActive = 1;
 	ofstream writer("DepartmentData.txt",ios::app);
 
 

@@ -16,6 +16,7 @@ public:
 	void setDeptCode(string code);
 	void setMaxStud(int st);
 	void setMaxTeach(int tch);
+	void setActivity(bool setActive);
 	void writeDepartmentData();
 
 
