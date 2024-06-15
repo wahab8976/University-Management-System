@@ -10,7 +10,8 @@ public:
 	int maxStudents, maxTeachers;
 	bool isActive;
 
-	//Department();
+	Department();
+	~Department();
 	void handleManageDepartments();
 	void splitDepartmentData(string line);
 };

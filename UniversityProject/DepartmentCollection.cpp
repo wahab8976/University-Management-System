@@ -2,9 +2,10 @@
 #include "Utils.h"
 
 
-
-void DepartmentCollection::handleDisplayAllDepartment() {
-    if (deptCount == 0) {
+void DepartmentCollection::handleDisplayAllDepartment() 
+{
+    if (deptCount == 0) 
+    {
         cout << "No departments to show." << endl;
         return;
     }
@@ -31,11 +32,11 @@ void DepartmentCollection::handleDisplayAllDepartment() {
 
     // Table Rows
     for (int i = 0; i < deptCount; i++) {
-        cout << setw(deptNameWidth) << departmentColl[i].deptName
-            << setw(deptCodeWidth) << departmentColl[i].deptCode
-            << setw(otherColWidth) << (departmentColl[i].isActive ? "Yes" : "No")
-            << setw(otherColWidth) << departmentColl[i].maxStudents
-            << setw(otherColWidth) << departmentColl[i].maxTeachers << endl;
+        cout << setw(deptNameWidth) << departmentColl[i]->deptName
+            << setw(deptCodeWidth) << departmentColl[i]->deptCode
+            << setw(otherColWidth) << (departmentColl[i]->isActive ? "Yes" : "No")
+            << setw(otherColWidth) << departmentColl[i]->maxStudents
+            << setw(otherColWidth) << departmentColl[i]->maxTeachers << endl;
     }
     cout << endl;
 }
@@ -115,16 +116,13 @@ void DepartmentCollection::loadDepartmentData()
 
     while (getline(reader,line))
     {
-        departmentColl[deptCount].splitDepartmentData(line);
+        departmentColl[deptCount] = new Department();
+        departmentColl[deptCount]->splitDepartmentData(line);
         deptCount++;
     }
 
     reader.close();
 }
-
-
-
-
 
 
 void DepartmentCollection::handleAddNewDepartment()

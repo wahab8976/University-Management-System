@@ -54,8 +54,6 @@ void CourseCollection::loadCourseData()
     string line;
     while (getline(reader, line))
     {
-        
-
         courseColl[courseCount] = new Course();
         courseColl[courseCount]->splitCardData(line);
         courseCount++;

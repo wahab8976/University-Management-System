@@ -5,7 +5,7 @@
 class DepartmentCollection
 {
 public:
-	Department departmentColl[100];
+	Department* departmentColl[100];
 	int deptCount;
 
 

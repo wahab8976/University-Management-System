@@ -2,6 +2,15 @@
 #include "Utils.h"
 
 
+Department::~Department()
+{
+    cout << "Department is Destroyed!" << endl;
+}
+
+Department::Department()
+{
+    cout << "Department is Created!" << endl;
+}
 
 void Department::handleManageDepartments()
 {
