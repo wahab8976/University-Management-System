@@ -6,7 +6,7 @@
 class CourseCollection
 {
 public:
-	Course* courseColl[20];
+	Course* courseColl[100];
 	int studentCount, teacherCount, courseCount;
 	CourseCollection();
 	~CourseCollection();
