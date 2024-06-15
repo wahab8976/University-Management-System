@@ -8,11 +8,29 @@ Course::Course()
 	cout << "Course is  created" << endl;
 }
 
+Course::Course(string code, string name, bool setActive)
+{
+	courseCode = code;
+	courseName = name;
+	isAvailable = setActive;
+	studentCount = 0;
+	teacherCount = 0;
+	cout << "Record Addded SuccessFully" << endl;
+}
+
+
 Course::~Course()
 {
 	cout << "Course is  Destroyed" << endl;
 }
 
+
+void Course::setActivity(bool setActive)
+{
+	isAvailable = setActive;
+	cout << "Activity Status  Added" << endl;
+	return;
+}
 
 void Course::setCourseCode(string code)
 {

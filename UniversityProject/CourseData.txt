@@ -4,19 +4,4 @@ CS-104,Algorithms,0,75,7
 CS-105,Operating Systems,1,90,9
 CS-199,Deep Learning,1,10,100
 CS-200,Artificial Intelligence,0,99,10
-DLD-6991,Digital Logics,1,0,0
-fafa,fhajfhaj,1,0,0
-DG-322,Deewan e ghalib,1,0,0
-Urdu-121,Munaqab e Umar,1,0,0
-BD-Iq1,Baange e dara,1,0,0
-afaff,dada,1,0,0
-ml-192,maula jutt,1,0,0
-ff,new one,1,0,0
-112,NEw course,1,0,0
-tr,fafaffafgh,1,0,0
-12,newwwww,1,0,0
-uui,,1,0,0
-Big boss season 1,,1,0,0
-1121,Big bno,1,0,0
-mu-112,Meet u soon,1,0,0
-rd,Rehman ,1,0,0
+Digital Electronics,DLD-102,1,0,0

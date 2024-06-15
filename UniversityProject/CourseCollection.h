@@ -15,7 +15,8 @@ public:
 	void loadCourseData();
 	void handleAddNewCourse();
 	void handleShowAllCourses();
-	void handleAddDeleteCourse();
+	void handleDeleteCourse();
+	void handleUpDateCourse();
 
 	int handleCourseSearch(string code);
 	void  getCourse(int index);

@@ -99,10 +99,10 @@ void Admin::handleManageCourse()
             currentCourse.handleAddNewCourse();
             break;
         case 3:
-            // Implement remove course functionality
+            currentCourse.handleDeleteCourse();
             break;
         case 4:
-            // Implement update course functionality
+            currentCourse.handleUpDateCourse();
             break;
         case 5:
         {
