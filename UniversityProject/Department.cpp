@@ -4,13 +4,11 @@
 
 Department::~Department()
 {
-	cout << "Department is Destroyed!" << endl;
 }
 
 Department::Department()
 {
 	//cout << "Department is Created!" << endl;
-	cout << "Def  Constructor" << endl;
 }
 
 // Takes values when update Fn runs

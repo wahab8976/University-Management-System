@@ -2,11 +2,9 @@
 #include "Utils.h"
 #include "Course.h"
 
-
 CourseCollection::CourseCollection() 
 {
     courseCount = 0;
-    cout << "Card Collection created..." << endl;
 }
 
 CourseCollection::~CourseCollection() 
@@ -15,10 +13,7 @@ CourseCollection::~CourseCollection()
     {
         delete courseColl[i];
     }
-    cout << "Course Collection destroyed..." << endl;
 }
-
-
 
 void CourseCollection::handleUpDateCourse()
 {

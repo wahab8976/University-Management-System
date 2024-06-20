@@ -1,11 +1,8 @@
 #include "Course.h"
 #include"Utils.h"
 
-
-
 Course::Course()
 {
-	cout << "Course is  created" << endl;
 }
 
 Course::Course(string code, string name, bool setActive)
@@ -18,12 +15,9 @@ Course::Course(string code, string name, bool setActive)
 	cout << "Record Addded SuccessFully" << endl;
 }
 
-
 Course::~Course()
 {
-	cout << "Course is  Destroyed" << endl;
 }
-
 
 void Course::setActivity(bool setActive)
 {

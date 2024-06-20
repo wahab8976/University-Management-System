@@ -9,8 +9,6 @@ public:
 	Role personType;
 	Gender  gndr;
 
-	Person();
-	~Person();
 	void splitPersonData(string  line);
 };
 

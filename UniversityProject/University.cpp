@@ -61,19 +61,6 @@
 		}
 
 
-		/*
-		Person* loggedInUser = currentPerson.PersonColl[personFoundIndex]; // Person Pointer to hold current User who logged in
-
-		for (int i = 0; i < currentPerson.personCount; i++)
-		{
-			if (currentPerson.PersonColl[i] == loggedInUser)
-			{
-				continue;
-			}
-			delete currentPerson.PersonColl[i];
-		}
-		
-		*/
 
 		Person* loggedInUser = currentPerson.PersonColl[personFoundIndex];
 
@@ -89,14 +76,12 @@
 			{
 				if (currentPerson.PersonColl[i] != loggedInUser)
 				{
-					cout << "Deleting " << currentPerson.PersonColl[i]->name << endl;
 					delete currentPerson.PersonColl[i];
 				}
 			}
 
 			// Show admin menu
 			adminUser->showMenuMenu();
-			cout << "After menu Execution~" << endl;
 			// Clean up the admin user object after usage
 			delete adminUser;
 			break;

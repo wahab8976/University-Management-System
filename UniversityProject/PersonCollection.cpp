@@ -1,8 +1,6 @@
 #include "PersonCollection.h"
 
 
-
-
 	PersonCollection::PersonCollection()
 	{
 		personCount = 0;
@@ -26,7 +24,6 @@
 				PersonColl[personCount]->splitPersonData(line);
 				personCount++;
 			}
-			cout << "PersonCount: " << personCount << endl;
 		}
 
 

@@ -4,7 +4,6 @@
 
 Admin::Admin(string name, string password, long long id, long long phone, long long CNIC)
 {
-    cout << "Admin is Created!" << endl;
     this->name = name;
     this->password = password;
     this->id = id;
@@ -14,9 +13,7 @@ Admin::Admin(string name, string password, long long id, long long phone, long l
 }
 
 
-Admin::~Admin() {
-    cout << "Admin " << name << " is Deleted!" << endl;
-}
+
 
 void Admin::handleManageDepartments() {
     currentDept.loadDepartmentData();
