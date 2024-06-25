@@ -54,7 +54,7 @@ void Course::writeCourseData()
 	isAvailable = 1;
 	studentCount = 0;
 	teacherCount = 0;
-	writer << courseCode << "," << courseName << "," << isAvailable << "," << studentCount << "," << teacherCount << endl;
+	writer << courseName << "," << courseCode << "," << isAvailable << "," << studentCount << "," << teacherCount << endl;
 
 	
 	cout << "Data Added Successfully" << endl;

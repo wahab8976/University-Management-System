@@ -77,8 +77,8 @@ void CourseCollection::handleUpDateCourse()
     ofstream writer("CourseData.txt");
     for (size_t i = 0; i < courseCount; ++i)
     {
-        writer << courseColl[i]->courseCode << ","
-            << courseColl[i]->courseName << ","
+        writer << courseColl[i]->courseName << ","
+            << courseColl[i]->courseCode << ","
             << courseColl[i]->isAvailable << ","
             << courseColl[i]->studentCount << ","
             << courseColl[i]->teacherCount << endl;
@@ -259,8 +259,8 @@ void CourseCollection::handleShowAllCourses()
     const int otherColWidth = 20; // Width for other columns
 
     // Table Header
-    cout << left << setw(courseNameWidth) << "Course Name"
-        << setw(courseCodeWidth) << "Course Code"
+    cout << left << setw(courseNameWidth) << "Course Code"
+        << setw(courseCodeWidth) << "Course Name"
         << setw(otherColWidth) << "Teachers Teaching"
         << setw(otherColWidth) << "Students Enrolled"
         << setw(otherColWidth) << "Available?" << endl;
@@ -273,7 +273,8 @@ void CourseCollection::handleShowAllCourses()
         << setw(otherColWidth) << "--------------------" << endl;
 
     // Table Rows
-    for (int i = 0; i < courseCount; i++) {
+    for (int i = 0; i < courseCount; i++) 
+    {
         cout << setw(courseNameWidth) << courseColl[i]->courseName
             << setw(courseCodeWidth) << courseColl[i]->courseCode
             << setw(otherColWidth) << courseColl[i]->teacherCount;

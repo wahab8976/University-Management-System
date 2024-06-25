@@ -1,7 +1,6 @@
-CS-102,Object Oriented Programming,1,100,10
-CS-103,Data Structures,1,80,8
-CS-104,Algorithms,0,75,7
-CS-105,Operating Systems,1,90,9
-CS-199,Deep Learning,1,10,100
-CS-200,Artificial Intelligence,0,99,10
-Digital Electronics,DLD-102,1,0,0
+Object Oriented Programming,CS-102,1,100,10
+Data Structures,CS-103,1,80,8
+Algorithms,CS-104,0,75,7
+Operating Systems,CS-105,1,90,9
+Deep Learning,CS-199,1,10,100
+Artificial Intelligence,CS-200,0,99,10
