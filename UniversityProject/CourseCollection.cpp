@@ -275,8 +275,8 @@ void CourseCollection::handleShowAllCourses()
     // Table Rows
     for (int i = 0; i < courseCount; i++) 
     {
-        cout << setw(courseNameWidth) << courseColl[i]->courseName
-            << setw(courseCodeWidth) << courseColl[i]->courseCode
+        cout << setw(courseNameWidth) << courseColl[i]->courseCode
+            << setw(courseCodeWidth) << courseColl[i]->courseName
             << setw(otherColWidth) << courseColl[i]->teacherCount;
 
         if (courseColl[i]->isAvailable)

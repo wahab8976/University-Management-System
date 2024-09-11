@@ -55,3 +55,8 @@ enum Role
 	STUDENT
 };
 
+enum DegreeType {
+	Bachelors = 1,
+	Masters,
+	PHD
+};
